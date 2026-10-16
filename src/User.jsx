@@ -1,8 +1,8 @@
-function User()
+let  User=()=>
 {
     return(
         <>
-        <h2>create component in react</h2>
+        <h2>fuction component in react</h2>
         </>
     )
 }
