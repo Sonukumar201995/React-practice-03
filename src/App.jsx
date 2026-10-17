@@ -8,7 +8,7 @@ function App()
 
   return (
     <>
-    <h2>welcome to react js series </h2>
+    <h2>jsx using variables in react.js </h2>
     <h3>{name}</h3>
     <h3>{id}</h3>
     <User/>
