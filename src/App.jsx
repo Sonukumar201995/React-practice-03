@@ -3,15 +3,13 @@ import User from "./User";
 function App()
 {
 
-  function greet()
-  {
-    return "hello world"
-  }
+ 
+  let a=10;
+  let b=20;
   return (
     <>
-    <h2>jsx using function in react.js </h2>
-    <h3>{greet()}</h3>
-    
+    <h2>jsx using condition inside in react.js </h2>
+    {a>b ? "a is greater":"b is greater"}
     <User/>
     </>
   )
