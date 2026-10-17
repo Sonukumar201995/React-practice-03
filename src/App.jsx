@@ -3,18 +3,15 @@ import User from "./User";
 function App()
 {
 
- 
- const data={
-  name:"sonu",
-  age:31,
-  email:"sonu@gmail.com"
- }
+let data=["sonu","brue","hello","sam"]
   return (
     <>
-      <h1>objec in react</h1>
-      <h2>{data.name}</h2>
-      <h2>{data.age}</h2>
-      <h2>{data.email}</h2>
+      <h1>array in react</h1>
+      {
+        data.map((value,index)=>(
+          <h3 key={index}>{value}</h3>
+        ))
+      }
     <User/>
     </>
   )
