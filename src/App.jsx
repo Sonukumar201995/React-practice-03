@@ -3,14 +3,15 @@ import User from "./User";
 function App()
 {
 
-  let name="react js";
-  let id=101
-
+  function greet()
+  {
+    return "hello world"
+  }
   return (
     <>
-    <h2>jsx using variables in react.js </h2>
-    <h3>{name}</h3>
-    <h3>{id}</h3>
+    <h2>jsx using function in react.js </h2>
+    <h3>{greet()}</h3>
+    
     <User/>
     </>
   )
