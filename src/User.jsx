@@ -1,8 +1,11 @@
 let  User=()=>
 {
+
+    let name="sonu";
+    let age=31;
     return(
         <>
-        <h2>fuction component in react</h2>
+        <h3>user page</h3>
         </>
     )
 }
