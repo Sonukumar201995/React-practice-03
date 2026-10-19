@@ -1,20 +1,16 @@
-import User from "./User";
-
 function App()
 {
+  function clickEvent()
+  {
+    console.log("click me !")
 
-let data=["sonu","brue","hello","sam"]
-  return (
+  }
+  return(
     <>
-      <h1>array in react</h1>
-      {
-        data.map((value,index)=>(
-          <h3 key={index}>{value}</h3>
-        ))
-      }
-    <User/>
+    <h2>click event and function call</h2>
+      <button onClick={clickEvent}>click</button>
+
     </>
   )
 }
-
 export default App;
