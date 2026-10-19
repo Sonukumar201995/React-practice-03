@@ -1,15 +1,13 @@
+import { useState } from "react";
+
 function App()
 {
-  function fruit(name)
-  {
-    console.log(name)
-
-  }
+  const [fruit,setFruit]=useState("apple")
   return(
     <>
-    <h2>Arrow function parameter funciton</h2>
-      <button onClick={()=>fruit("apple")}>click</button>
-        
+      <h1>use state in react</h1>
+      <h5>{fruit}</h5>
+      <button onClick={()=>setFruit("banana")}>change fruit</button>
     </>
   )
 }
