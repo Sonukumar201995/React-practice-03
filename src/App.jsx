@@ -1,15 +1,15 @@
 function App()
 {
-  function clickEvent()
+  function fruit(name)
   {
-    console.log("click me !")
+    console.log(name)
 
   }
   return(
     <>
-    <h2>click event and function call</h2>
-      <button onClick={clickEvent}>click</button>
-
+    <h2>Arrow function parameter funciton</h2>
+      <button onClick={()=>fruit("apple")}>click</button>
+        
     </>
   )
 }
