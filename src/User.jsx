@@ -1,11 +1,10 @@
-let  User=()=>
-{
 
-    let name="sonu";
-    let age=31;
+function User({name})
+{
     return(
+
         <>
-        <h3>user page</h3>
+        <h2>user name :{name}</h2>
         </>
     )
 }
