@@ -2,13 +2,16 @@
 
 function App()
 {
-  let name="sonu kuar"
-  let age=31
+  const user={
+    name:"sonu",
+    age:31,
+    email:"sonu@gmail.com"
+  }
 
   return(
     <>
-    <h1>props  with variable in react</h1>
-    <User username={name} userage={age}/>
+    <h1>props  with object in react</h1>
+    <User user={user}/>
     </>
   )
 }
