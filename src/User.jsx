@@ -1,10 +1,11 @@
 
-function User({name})
+function User({username,userage})
 {
     return(
 
         <>
-        <h2>user name :{name}</h2>
+        <h2>user name :{username}</h2>
+        <h2>user name :{userage}</h2>
         </>
     )
 }
