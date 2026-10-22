@@ -2,15 +2,11 @@
 
 function App()
 {
-  const user={
-    name:"sonu",
-    age:31,
-    email:"sonu@gmail.com"
-  }
-
+  const user=["hello","welcome","sonu","january","mondya"]
+ 
   return(
     <>
-    <h1>props  with object in react</h1>
+    <h1>props  with Array in react</h1>
     <User user={user}/>
     </>
   )
