@@ -1,18 +1,12 @@
-import { useState } from "react";
 import User from "./User";
 
-function App()
-{
-  const [user,setUser]=useState("sonu kumar")
-  return(
+function App() {
+  return (
     <>
-    <h1>props with onlick</h1>
-    {
-      user && <User name={user}/>
-    }
-    <button onClick={()=>setUser("brue")}>update</button>
+      <h1>Default props in React</h1>
+      <User />
     </>
-  )
+  );
 }
 
 export default App;

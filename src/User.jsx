@@ -1,13 +1,9 @@
-
-function User({name})
-{
-    return(
-
-        <>
-        <h1 style={{color:"red"}}>Name :{name}</h1>
-       
-        </>
-    )
+function User({ name = "sonu kumar" }) {
+  return (
+    <>
+      <h1>Name: {name}</h1>
+    </>
+  );
 }
 
 export default User;
