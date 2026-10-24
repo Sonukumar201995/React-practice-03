@@ -1,12 +1,15 @@
-import User from "./User";
+import { useDebugValue, useState } from "react";
 
-function App() {
-  return (
+function App()
+{
+  const [value,setValue]=useState("")
+  return(
     <>
-      <h1>Default props in React</h1>
-      <User />
+    <h2>onChange get value</h2>
+    <input type="text"  value={value} placeholder="enter your name" onChange={(event)=>setValue(event.target.value)}/>
+    <h3>{value}</h3>
+    <button onClick={()=>setValue("")}>click</button>
     </>
-  );
+  )
 }
-
 export default App;
