@@ -1,45 +1,17 @@
+import { useEffect, useState } from "react";
 
-function App() {
-  const collageData = [
-    {
-      collage: "IGNOU",
-      website: "ignou@.com",
-      city: "Delhi",
-      student: [
-        { name: "sonu" },
-        { name: "brue" }
-      ]
-    },
-    {
-      collage: "DU",
-      website: "du@com",
-      city: "Delhi",
-      student: [
-        { name: "joke" },
-        { name: "janny" }
-      ]
-    }
-  ];
+function App()
+{
 
-  return (
+  const[count,setCount]=useState(0);
+  useEffect(()=>{
+    console.log("hello world")
+  },[])
+  return(
     <>
-      <h1>Nested Loop</h1>
-       <h1>collage name :</h1> 
-      {collageData.map((value, index) => (
-        <div key={index}>
-          <h2>{value.collage}</h2>
-          <p>Website: {value.website}</p>
-          <p>City: {value.city}</p>
-
-          <h3>Students Name</h3>
-
-          {value.student.map((student, i) => (
-            <p key={i}>{student.name}</p>
-          ))}
-        </div>
-      ))}
+    <h1>useEffect hook {count}</h1>
+    <button onClick={()=>setCount(count+1)}>click me!</button>
     </>
-  );
+  )
 }
-
 export default App;
