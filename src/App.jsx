@@ -1,15 +1,10 @@
-import { useState } from "react";
+import './css/style.css'
 
 function App()
 {
-
- const [color,setColor]=useState("red")
- 
-
   return(
     <>
-    <h1 style={{color}}>Styling :Inline style in react</h1>
-    <button onClick={()=>setColor("yellow")}>change color</button>
+    <h1 className='heading'>External style in react</h1>
     </>
   )
 }
