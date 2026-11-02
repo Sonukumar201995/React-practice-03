@@ -1,8 +1,12 @@
 function App()
 {
+
+  let handleStyle={
+    color:"orange"
+  }
   return(
     <>
-    <h1 style={{color:"red"}}>Styling :Inline style in react</h1>
+    <h1 style={handleStyle}>Styling :Inline style in react</h1>
     </>
   )
 }
