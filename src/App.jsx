@@ -1,17 +1,10 @@
-import { useEffect, useState } from "react";
-
 function App()
 {
-
-  const[count,setCount]=useState(0);
-  useEffect(()=>{
-    console.log("hello world")
-  },[])
   return(
     <>
-    <h1>useEffect hook {count}</h1>
-    <button onClick={()=>setCount(count+1)}>click me!</button>
+    <h1 style={{color:"red"}}>Styling :Inline style in react</h1>
     </>
   )
 }
+
 export default App;
