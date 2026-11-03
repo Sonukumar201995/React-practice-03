@@ -1,10 +1,11 @@
-import './css/style.css'
+import User from './User'
 
 function App()
 {
   return(
     <>
-    <h1 className='heading'>External style in react</h1>
+    <h1>style with css module</h1>
+    <User/>
     </>
   )
 }
