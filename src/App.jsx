@@ -1,13 +1,18 @@
-import User from './User'
 
-function App()
-{
-  return(
+import styled from "styled-components";
+
+// Create styled component outside App()
+const Heading = styled.h1`
+  color: red;
+  background-color: green;
+`;
+
+function App() {
+  return (
     <>
-    <h1>style with css module</h1>
-    <User/>
+      <Heading>Hello welcome to React</Heading>
     </>
-  )
+  );
 }
 
 export default App;
