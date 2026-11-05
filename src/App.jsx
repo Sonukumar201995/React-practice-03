@@ -1,18 +1,22 @@
+import { useRef } from "react";
 
-import styled from "styled-components";
+function App()
+{
 
-// Create styled component outside App()
-const Heading = styled.h1`
-  color: red;
-  background-color: green;
-`;
-
-function App() {
-  return (
+  const inputRef=useRef(null);
+  const handle=()=>{
+    inputRef.current.focus();
+    inputRef.current.style.color='green'
+    inputRef.current.placeholder='password'
+    // inputRef.current.value='123'
+  }
+  return(
     <>
-      <Heading>Hello welcome to React</Heading>
+    <h1>useRef Hook</h1>
+    <input type="text" placeholder="enter your name" ref={inputRef}/>
+    <button onClick={handle}>focus</button>
     </>
-  );
+  )
 }
 
 export default App;
