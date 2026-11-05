@@ -1,22 +1,26 @@
+
 import { useRef } from "react";
 
-function App()
-{
+function App() {
+  const inputref = useRef(null);
 
-  const inputRef=useRef(null);
-  const handle=()=>{
-    inputRef.current.focus();
-    inputRef.current.style.color='green'
-    inputRef.current.placeholder='password'
-    // inputRef.current.value='123'
-  }
-  return(
+  const togglehandle = () => {
+    if (inputref.current.style.display != "none") {
+      inputref.current.style.display = "none";
+    } else {
+      inputref.current.style.display = "inline";
+    }
+  };
+
+  return (
     <>
-    <h1>useRef Hook</h1>
-    <input type="text" placeholder="enter your name" ref={inputRef}/>
-    <button onClick={handle}>focus</button>
+      <h1>Hide and Show Practice</h1>
+      <h2 ref={inputref}>Sonu Kumar</h2>
+      <button onClick={togglehandle}>Toggle</button>
+
+      
     </>
-  )
+  );
 }
 
 export default App;
