@@ -1,11 +1,10 @@
-import style from "./css/style.module.css"
 
-function User()
+
+function User({displayName,name})
 {
     return(
         <>
-            <h1 className={style.heading}>user profile</h1>
-            <h1>hello</h1>
+            <button onClick={()=>displayName(name)}>display</button>
         </>
     )
 }
