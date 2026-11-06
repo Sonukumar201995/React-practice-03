@@ -1,26 +1,27 @@
+function App()
+{
 
-import { useRef } from "react";
+  const handleform=(event)=>{
+    event.preventDefault();
 
-function App() {
-  const inputref = useRef(null);
-
-  const togglehandle = () => {
-    if (inputref.current.style.display != "none") {
-      inputref.current.style.display = "none";
-    } else {
-      inputref.current.style.display = "inline";
-    }
-  };
-
-  return (
+    const name=document.querySelector("#name").value;
+    const pass=document.querySelector("#password").value
+    console.log(name,pass);
+  }
+  return(
     <>
-      <h1>Hide and Show Practice</h1>
-      <h2 ref={inputref}>Sonu Kumar</h2>
-      <button onClick={togglehandle}>Toggle</button>
-
-      
+    <h1>uncontrolled component</h1>
+    <form onSubmit={handleform}>
+      <input type="text" placeholder="enter your name" id="name"/>
+      <br />
+      <br />
+      <input type="password" placeholder="enter your password" id="password"/>
+      <br />
+      <br />
+      <button type="submit">submit</button>
+    </form>
     </>
-  );
+  )
 }
 
 export default App;
