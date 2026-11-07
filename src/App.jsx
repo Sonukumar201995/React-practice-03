@@ -1,21 +1,38 @@
-import { useRef } from "react";
-import User from "./User";
+import { useFormStatus } from "react-dom";
+
+function CustomerForm() {
+  const { pending } = useFormStatus();
+
+  console.log(pending);
+
+  return (
+    <>
+      <h1>useFormStatus in React</h1>
+
+      <input type="text" placeholder="Enter your name" />
+      <br /><br />
+
+      <input type="password" placeholder="Enter your password" />
+      <br /><br />
+
+      <button disabled={pending}>
+        {pending ? "Submitting..." : "Submit"}
+      </button>
+    </>
+  );
+}
 
 function App() {
-  let inputRef = useRef(null);
-
-  let updateInput = () => {
-    inputRef.current.value = 1000;
-    inputRef.current.focus();
+  let handleForm = async () => {
+    await new Promise((res) => setTimeout(res, 2000));
+    console.log("Submit");
   };
 
   return (
     <>
-      <h1>forwardRef in React</h1>
-
-      <User ref={inputRef} />
-
-      <button onClick={updateInput}>Click</button>
+      <form action={handleForm}>
+        <CustomerForm />
+      </form>
     </>
   );
 }
