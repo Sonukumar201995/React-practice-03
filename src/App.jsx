@@ -1,40 +1,21 @@
-import { useFormStatus } from "react-dom";
+import { useTransition } from "react";
 
-function CustomerForm() {
-  const { pending } = useFormStatus();
+function App()
+{
+  const [pending,startTrasition]=useTransition();
+  const handleButton=()=>{
+    startTrasition(async()=>{
+      await new Promise(res=>setTimeout(res,2000))
 
-  console.log(pending);
-
-  return (
+      console.log("Task completed")
+    })
+  }
+  return(
     <>
-      <h1>useFormStatus in React</h1>
-
-      <input type="text" placeholder="Enter your name" />
-      <br /><br />
-
-      <input type="password" placeholder="Enter your password" />
-      <br /><br />
-
-      <button disabled={pending}>
-        {pending ? "Submitting..." : "Submit"}
-      </button>
+    <h1>usetransition in react</h1>
+    <button disabled={pending} onClick={handleButton}>{pending ? "loading...":"Click"} </button>
     </>
-  );
-}
-
-function App() {
-  let handleForm = async () => {
-    await new Promise((res) => setTimeout(res, 2000));
-    console.log("Submit");
-  };
-
-  return (
-    <>
-      <form action={handleForm}>
-        <CustomerForm />
-      </form>
-    </>
-  );
+  )
 }
 
 export default App;
