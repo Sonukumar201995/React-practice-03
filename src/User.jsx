@@ -1,12 +1,11 @@
+import { forwardRef } from "react";
 
-
-function User({displayName,name})
-{
-    return(
-        <>
-            <button onClick={()=>displayName(name)}>display</button>
-        </>
-    )
+function User(props, ref) {
+  return (
+    <>
+      <input type="text" ref={ref} />
+    </>
+  );
 }
 
-export default User;
+export default forwardRef(User);
