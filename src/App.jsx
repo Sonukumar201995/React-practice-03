@@ -2,46 +2,30 @@
 import { useState } from "react";
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [user, setUser] = useState('');
+  const [data, setData] = useState({
+    name: "sonu kumar",
+    age: 31,
+    city: "new delhi"
+  });
 
-  const handleUser = () => {
-    if (user.trim() === '') return;
-
-    setUsers([...users, user]);
-    setUser('');
+  const handleName = (val) => {
+    setData({ ...data, name: val });
   };
-
-  // Derived States
-  const total = users.length;
-
-  const last = users[users.length - 1];
-
-  const unique = [...new Set(users)].length;
 
   return (
     <>
-      <h1>Derived State</h1>
+      <h1>Update Object in React</h1>
 
       <input
         type="text"
         placeholder="Enter name"
-        value={user}
-        onChange={(event) => setUser(event.target.value)}
+        value={data.name}
+        onChange={(e) => handleName(e.target.value)}
       />
 
-      <br />
-      <br />
-
-      <button onClick={handleUser}>Add User</button>
-
-      <h3>Total Users: {total}</h3>
-      <h3>Last User: {last || 'No user added'}</h3>
-      <h3>Unique Users: {unique}</h3>
-
-      {users.map((value, index) => (
-        <h4 key={index}>{value}</h4>
-      ))}
+      <h2>Name: {data.name}</h2>
+      <h2>Age: {data.age}</h2>
+      <h2>City: {data.city}</h2>
     </>
   );
 }
