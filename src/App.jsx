@@ -1,33 +1,25 @@
-
 import { useState } from "react";
 
-function App() {
-  const [data, setData] = useState({
-    name: "sonu kumar",
-    age: 31,
-    city: "new delhi"
-  });
+function App()
+{
+  const [data,setData]=useState(['sonu','bruice','anil','hello'])
 
-  const handleName = (val) => {
-    setData({ ...data, name: val });
-  };
-
-  return (
+  const updataData=(name)=>{
+    const newData=[...data];
+      newData[newData.length-1]=name;
+      setData(newData);
+  }
+  return(
     <>
-      <h1>Update Object in React</h1>
-
-      <input
-        type="text"
-        placeholder="Enter name"
-        value={data.name}
-        onChange={(e) => handleName(e.target.value)}
-      />
-
-      <h2>Name: {data.name}</h2>
-      <h2>Age: {data.age}</h2>
-      <h2>City: {data.city}</h2>
+    <h1>update array in react</h1>
+    <input type="text" onChange={(event)=>updataData(event.target.value)}/>
+    {
+      data.map((val,index)=>(
+        <h2 key={index}>{val}</h2>
+      ))
+    }
     </>
-  );
+  )
 }
 
 export default App;
