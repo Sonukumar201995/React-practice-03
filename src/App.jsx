@@ -1,23 +1,15 @@
 import { useState } from "react";
+import User from './User';
+import Display from "./Display"
 
 function App()
 {
-  const [data,setData]=useState(['sonu','bruice','anil','hello'])
-
-  const updataData=(name)=>{
-    const newData=[...data];
-      newData[newData.length-1]=name;
-      setData(newData);
-  }
+  const [user,setUser]=useState();
   return(
     <>
-    <h1>update array in react</h1>
-    <input type="text" onChange={(event)=>updataData(event.target.value)}/>
-    {
-      data.map((val,index)=>(
-        <h2 key={index}>{val}</h2>
-      ))
-    }
+    <h1>lifting state up in react</h1>
+    <User setUser={setUser}/>
+    <Display user={user}/>
     </>
   )
 }

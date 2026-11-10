@@ -1,11 +1,12 @@
-import { forwardRef } from "react";
-
-function User(props, ref) {
-  return (
+function User({setUser})
+{
+  return(
     <>
-      <input type="text" ref={ref} />
+    <h2>Enter user name</h2>
+    <input type="text" onChange={(event)=>setUser(event.target.value)}/>
+    <hr />
     </>
-  );
+  )
 }
 
-export default forwardRef(User);
+export default User;
