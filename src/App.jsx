@@ -1,44 +1,27 @@
-import { useActionState } from "react";
+import { useId, useState } from "react";
 
-function App()
-{
+function App() {
+  const id = useId();
+  const [name, setName] = useState("");
 
-  const handleSubmit=(preData,formData)=>{
-        const name=formData.get('name');
-        const password=formData.get('password');
-
-        if(name && password)
-        {
-          return{
-            message:'data submit'
-          }
-        }else
-        {
-          return{
-            error:'data not submit'
-          }
-        }
-  }
-
-  const [data,action,pending]=useActionState(handleSubmit,undefined);
-  console.log(data);
-  return(
+  return (
     <>
-    <h1>useAction State in react</h1>
-    <form action={action}>
-      <input type="text" placeholder="Enter your name" name="name"/>
-      <br /><br />
+      <h1>useId in React</h1>
 
-      <input type="password" placeholder="Enter your password" name="password"/>
-      <br /><br />
+      <h3>Generated Unique ID: {id}</h3>
 
-      <button disabled={pending}>{pending ?"submitting....":"submit"}</button>
+      <label htmlFor={id}>Enter Name:</label>
 
-      {data?.error && <span style={{color:"red"}}>{data.error}</span>}
-      {data?.message && <span style={{color:"green"}}>{data.message}</span>}
-    </form>
+      <input
+        type="text"
+        id={id}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <h3>Your Name: {name}</h3>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
