@@ -1,27 +1,18 @@
-import { useId, useState } from "react";
+import useToggle from "./UseToggle";
 
-function App() {
-  const id = useId();
-  const [name, setName] = useState("");
-
-  return (
+function App()
+{
+  const[value,setValue]=useToggle(true);
+  return(
     <>
-      <h1>useId in React</h1>
-
-      <h3>Generated Unique ID: {id}</h3>
-
-      <label htmlFor={id}>Enter Name:</label>
-
-      <input
-        type="text"
-        id={id}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-
-      <h3>Your Name: {name}</h3>
+    <h1>make custom hook in react</h1>
+    <button onClick={()=>setValue()}>toggle</button>
+    <button onClick={()=>setValue(false)}>hide</button>
+    <button onClick={()=>setValue(true)}>show</button>
+    {
+      value ? <h2>custom hook</h2> :null
+    }
     </>
-  );
+  )
 }
-
 export default App;
